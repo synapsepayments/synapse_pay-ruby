@@ -1,4 +1,4 @@
-# SynapsePay Ruby Bindings ![Travis CI Status](https://travis-ci.org/synapsepayments/synapse_pay-ruby.svg?branch=master) [![Code Climate](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby/badges/gpa.svg)](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby)
+# SynapsePay Ruby Bindings [![Code Climate](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby/badges/gpa.svg)](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby)
 
 [![API Library via Apibits.com](http://apibits.com/assets/images/apibits-badge.png)](http://apibits.com)
 
