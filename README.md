@@ -1,4 +1,4 @@
-# SynapsePay Ruby Bindings ![Travis CI Status](https://travis-ci.org/synapse_pay/synapse_pay-ruby.svg?branch=master) [![Code Climate](https://codeclimate.com/github/synapse_pay/synapse_pay-ruby/badges/gpa.svg)](https://codeclimate.com/github/synapse_pay/synapse_pay-ruby)
+# SynapsePay Ruby Bindings ![Travis CI Status](https://travis-ci.org/synapsepayments/synapse_pay-ruby.svg?branch=master) [![Code Climate](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby/badges/gpa.svg)](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby)
 
 
 ## Installation
