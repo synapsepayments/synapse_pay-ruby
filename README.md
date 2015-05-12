@@ -18,8 +18,14 @@ gem build synapse_pay.gemspec
 gem install synapse_pay-0.0.1.gem
 ```
 
+## Documentation
+
+Documentation is available at [http://synapsepay.readme.io/v1.0/docs/](http://synapsepay.readme.io/v1.0/docs/).
 
 
+## Samples
+
+See [samples.md](https://github.com/synapsepayments/synapse_pay-ruby/blob/master/samples.md) for sample usage in ruby.
 
 
 ## Requirements
