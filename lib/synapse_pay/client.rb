@@ -57,32 +57,40 @@ module SynapsePay
       @banks ||= BankEndpoint.new(self)
     end
 
-    def orders
-      @orders ||= OrderEndpoint.new(self)
+    def bank_mfa_devices
+      @bank_mfa_devices ||= BankMfaDeviceEndpoint.new(self)
     end
 
-    def deposits
-      @deposits ||= DepositEndpoint.new(self)
-    end
-
-    def withdrawals
-      @withdrawals ||= WithdrawalEndpoint.new(self)
-    end
-
-    def cards
-      @cards ||= CardEndpoint.new(self)
-    end
-
-    def mass_pays
-      @mass_pays ||= MassPayEndpoint.new(self)
+    def bank_mfa_questions
+      @bank_mfa_questions ||= BankMfaQuestionsEndpoint.new(self)
     end
 
     def bank_statuses
       @bank_statuses ||= BankStatusEndpoint.new(self)
     end
 
+    def cards
+      @cards ||= CardEndpoint.new(self)
+    end
+
+    def deposits
+      @deposits ||= DepositEndpoint.new(self)
+    end
+
+    def mass_pays
+      @mass_pays ||= MassPayEndpoint.new(self)
+    end
+
+    def orders
+      @orders ||= OrderEndpoint.new(self)
+    end
+
     def wires
       @wires ||= WireEndpoint.new(self)
+    end
+
+    def withdrawals
+      @withdrawals ||= WithdrawalEndpoint.new(self)
     end
 
   end
