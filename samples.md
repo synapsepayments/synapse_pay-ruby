@@ -1,3 +1,20 @@
+# Oauth Client
+
+To access most endpoints you need an oauth client that makes requests using an oauth_consumer_key. This is automatically created when you:
+
+- Create a user
+- Login as a user
+- Refresh access with a refresh_token
+
+But if you ever need to create a new one using an existing oauth_consumer_key you can with the following code:
+
+```ruby
+client = SynapsePay::Client.new("oauth_consumer_key", "refresh_token")
+
+# The refresh token is optional, but if you provide it you can refresh with no extra arguments:
+client.refresh_access
+```
+
 # User
 
 ## Create a user
