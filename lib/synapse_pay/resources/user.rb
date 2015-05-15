@@ -1,22 +1,22 @@
 module SynapsePay
   class User < APIResource
-    attr_accessor :email
-    attr_accessor :phone_number
-    attr_accessor :visit_count
-    attr_accessor :visit_message
-    attr_accessor :accept_gratuity
-    attr_accessor :fullname
-    attr_accessor :is_trusted
-    attr_accessor :resource_uri
-    attr_accessor :avatar
-    attr_accessor :has_avatar
-    attr_accessor :referral_code
-    attr_accessor :username
     attr_accessor :accept_bank_payments
+    attr_accessor :accept_gratuity
+    attr_accessor :avatar
     attr_accessor :balance
+    attr_accessor :email
+    attr_accessor :fullname
+    attr_accessor :has_avatar
+    attr_accessor :is_trusted
+    attr_accessor :phone_number
     attr_accessor :promo_text
+    attr_accessor :referral_code
+    attr_accessor :resource_uri
     attr_accessor :seller_details
     attr_accessor :user_id
+    attr_accessor :username
+    attr_accessor :visit_count
+    attr_accessor :visit_message
 
     def self.create(params={}, headers={})
       method = APIMethod.new(:post, "/user/create", params, headers, self)
@@ -58,23 +58,23 @@ module SynapsePay
     # Everything below here is used behind the scenes.
     APIResource.register_api_subclass(self, "user")
     @api_attributes = {
-      :email => {},
-      :phone_number => {},
-      :visit_count => {},
-      :visit_message => {},
-      :accept_gratuity => {},
-      :fullname => {},
-      :is_trusted => {},
-      :resource_uri => {},
-      :avatar => {},
-      :has_avatar => {},
-      :referral_code => {},
-      :username => {},
       :accept_bank_payments => {},
+      :accept_gratuity => {},
+      :avatar => {},
       :balance => {},
+      :email => {},
+      :fullname => {},
+      :has_avatar => {},
+      :is_trusted => {},
+      :phone_number => {},
       :promo_text => {},
+      :referral_code => {},
+      :resource_uri => {},
       :seller_details => {},
       :user_id => {},
+      :username => {},
+      :visit_count => {},
+      :visit_message => {},
     }
   end
 end

@@ -1,12 +1,12 @@
 module SynapsePay
   class Card < APIResource
-    attr_accessor :routing_number_string
     attr_accessor :account_class
     attr_accessor :account_number_string
     attr_accessor :account_type
     attr_accessor :id
     attr_accessor :name_on_account
     attr_accessor :resource_uri
+    attr_accessor :routing_number_string
 
     def update(params={}, headers={})
       params = ParamsBuilder.merge({
@@ -20,13 +20,13 @@ module SynapsePay
     # Everything below here is used behind the scenes.
     APIResource.register_api_subclass(self, "card")
     @api_attributes = {
-      :routing_number_string => {},
       :account_class => {},
       :account_number_string => {},
       :account_type => {},
       :id => {},
       :name_on_account => {},
       :resource_uri => {},
+      :routing_number_string => {},
     }
   end
 end

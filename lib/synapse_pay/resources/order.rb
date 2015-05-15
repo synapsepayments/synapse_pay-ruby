@@ -1,23 +1,23 @@
 module SynapsePay
   class Order < APIResource
-    attr_accessor :status_url
-    attr_accessor :tip
-    attr_accessor :id
-    attr_accessor :seller
-    attr_accessor :fee
-    attr_accessor :resource_uri
-    attr_accessor :ticket_number
-    attr_accessor :total
+    attr_accessor :account_type
     attr_accessor :amount
     attr_accessor :date
-    attr_accessor :supp_id
+    attr_accessor :date_settled
+    attr_accessor :discount
+    attr_accessor :facilitator_fee
+    attr_accessor :fee
+    attr_accessor :id
     attr_accessor :is_buyer
     attr_accessor :note
-    attr_accessor :account_type
-    attr_accessor :discount
+    attr_accessor :resource_uri
+    attr_accessor :seller
     attr_accessor :status
-    attr_accessor :date_settled
-    attr_accessor :facilitator_fee
+    attr_accessor :status_url
+    attr_accessor :supp_id
+    attr_accessor :ticket_number
+    attr_accessor :tip
+    attr_accessor :total
 
     def update(params={}, headers={})
       params = ParamsBuilder.merge({
@@ -40,24 +40,24 @@ module SynapsePay
     # Everything below here is used behind the scenes.
     APIResource.register_api_subclass(self, "order")
     @api_attributes = {
-      :status_url => {},
-      :tip => {},
-      :id => {},
-      :seller => {},
-      :fee => {},
-      :resource_uri => {},
-      :ticket_number => {},
-      :total => {},
+      :account_type => {},
       :amount => {},
       :date => {},
-      :supp_id => {},
+      :date_settled => {},
+      :discount => {},
+      :facilitator_fee => {},
+      :fee => {},
+      :id => {},
       :is_buyer => {},
       :note => {},
-      :account_type => {},
-      :discount => {},
+      :resource_uri => {},
+      :seller => {},
       :status => {},
-      :date_settled => {},
-      :facilitator_fee => {},
+      :status_url => {},
+      :supp_id => {},
+      :ticket_number => {},
+      :tip => {},
+      :total => {},
     }
   end
 end
