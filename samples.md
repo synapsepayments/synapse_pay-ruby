@@ -18,6 +18,27 @@ client = SynapsePay::User.create({
 })
 ```
 
+## Create a user with force_create = "no"
+
+This will return an existing user instead of throwing an error if one exists.
+
+```ruby
+# Make sure we are in Sandbox
+SynapsePay.api_base = SynapsePay.api_sandbox
+
+SynapsePay.client_id = "client-id"
+SynapsePay.client_secret = "client-secret"
+
+# This creates an oauth client for the newly created user.
+client = SynapsePay::User.create({
+  :email => "test-user@synapsepay.com",
+  :fullname => "Test Account",
+  :ip_address => "11.111.11.11",
+  :phonenumber => "123456789",
+  :force_create => "no"
+})
+```
+
 
 ## Login as a user
 
