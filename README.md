@@ -15,12 +15,12 @@ If you want to build & install the gem from source:
 
 ```bash
 gem build synapse_pay.gemspec
-gem install synapse_pay-0.0.1.gem
+gem install synapse_pay-0.0.2.gem
 ```
 
 ## Documentation
 
-Documentation is available at [http://synapsepay.readme.io/v1.0/docs/](http://synapsepay.readme.io/v1.0/docs/).
+Documentation is available at [http://synapsepay.readme.io/v1.0/docs](http://synapsepay.readme.io/v1.0/docs).
 
 
 ## Samples
