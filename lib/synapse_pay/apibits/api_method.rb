@@ -85,11 +85,11 @@ module SynapsePay
     def error_with_response(error)
       case @response_code
       when 400, 404
-        return APIError.new("Invalid request. Please check the URL and parameters.", self)
+        return APIError.new(@response_body || "Invalid request. Please check the URL and parameters.", self)
       when 401
-        return AuthenticationError.new("Authentication failed. Please check your API key and verify that it is correct.", self)
+        return AuthenticationError.new(@response_body || "Authentication failed.", self)
       else
-        return APIError.new("An error occured while making the API call.", self)
+        return APIError.new(@response_body || "An error occured while making the API call.", self)
       end
     end
 
