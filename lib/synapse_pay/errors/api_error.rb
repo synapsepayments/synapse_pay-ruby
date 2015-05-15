@@ -17,7 +17,10 @@ module SynapsePay
 
     def json
       begin
-        @api_method.response_json if @api_method
+        if @api_method
+          hash = @api_method.response_json
+          return APIObject.construct(hash)
+        end
       rescue APIError
         nil
       end

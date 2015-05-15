@@ -33,6 +33,10 @@ module SynapsePay
         raise @error
       end
 
+      if(!response_json[:success])
+        @error = APIError.new(response_json, self)
+        raise @error
+      end
       response_json
     end
 
@@ -41,17 +45,14 @@ module SynapsePay
     end
 
     def response_json
+      return @json if @json
       begin
-        json = Util.symbolize_keys(JSON.parse(@response_body))
+        @json = Util.symbolize_keys(JSON.parse(@response_body))
       rescue JSON::ParserError
         @error = APIError.new("Unable to parse the server response as JSON.", self)
         raise @error
       end
-      if(!json[:success])
-        @error = APIError.new(json, self)
-        raise @error
-      end
-      json
+      @json
     end
 
     def compose_error(error)
