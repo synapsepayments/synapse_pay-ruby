@@ -20,7 +20,7 @@ gem install synapse_pay-0.0.2.gem
 
 ## Documentation
 
-Documentation is available at [http://synapsepay.readme.io/v1.0/docs](http://synapsepay.readme.io/v1.0/docs).
+Documentation is available at [http://synapsepay.readme.io/v2.0/docs](http://synapsepay.readme.io/v2.0/docs).
 
 
 ## Samples
