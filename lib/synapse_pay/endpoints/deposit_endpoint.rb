@@ -10,7 +10,7 @@ module SynapsePay
     def create(params={}, headers={})
       method = APIMethod.new(:post, "/deposit/add", params, headers, self)
       json = @client.execute(method)
-      Deposit.new(json[:deposits], method, @client)
+      Deposit.new(json[:deposit], method, @client)
     end
 
     def micro(params={}, headers={})
