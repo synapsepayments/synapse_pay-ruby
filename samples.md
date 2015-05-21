@@ -178,6 +178,11 @@ mfa = client.banks.link({
 })
 mfa # this will be a SynapsePay::BankMfaQuestions instance
 banks = mfa.answer("Bank of America", "test_answer") # this will be a list of bank accounts
+
+# Answering an MFA without an MFA instance
+banks = client.bank_mfa_devices.answer("access_token, "bank name", "answer")
+# or
+banks = client.bank_mfa_questions.answer("access_token, "bank name", "answer")
 ```
 
 
