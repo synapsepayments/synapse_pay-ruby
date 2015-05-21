@@ -25,6 +25,15 @@ module SynapsePay
       end
     end
 
+    def refresh(id, params={}, headers={})
+      params = ParamsBuilder.merge({
+        :id => id,
+      }, params)
+      method = APIMethod.new(:post, "/bank/refresh", params, headers, self)
+      json = @client.execute(method)
+      APIList.new(:Bank, json[:banks], method, @client)
+    end
+
     def remove(bank_id, params={}, headers={})
       params = ParamsBuilder.merge({
         :bank_id => bank_id,
@@ -32,15 +41,6 @@ module SynapsePay
       method = APIMethod.new(:post, "/bank/delete", params, headers, self)
       json = @client.execute(method)
       json
-    end
-
-    def retrieve(id, params={}, headers={})
-      params = ParamsBuilder.merge({
-        :id => id,
-      }, params)
-      method = APIMethod.new(:post, "/bank/refresh", params, headers, self)
-      json = @client.execute(method)
-      APIList.new(:Bank, json[:banks], method, @client)
     end
 
   end
