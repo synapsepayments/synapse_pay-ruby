@@ -1,5 +1,5 @@
 # SynapsePay Ruby bindings
-# API Docs are located at http://synapsepay.readme.io/v1.0/docs
+# API Docs are located at http://api.synapsepay.com/v2.0
 require 'cgi'
 require 'set'
 require 'openssl'
@@ -67,7 +67,7 @@ module SynapsePay
   @api_staging = "https://sandbox.synapsepay.com/api/v2"
   @api_version = "v2"
   @support_email = "hello@synapsepay.com"
-  @docs_url = "http://synapsepay.readme.io/v1.0/docs"
+  @docs_url = "http://api.synapsepay.com/v2.0"
   @api_sandbox = "https://sandbox.synapsepay.com/api/v2"
 
   class << self
