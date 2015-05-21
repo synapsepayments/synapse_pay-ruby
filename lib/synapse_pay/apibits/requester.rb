@@ -45,7 +45,7 @@ module SynapsePay
         end
         params = nil
       else
-        if headers["Content-Type"] == "application/json"
+        if headers["Content-Type"] == "application/json" || headers[:"Content-Type"] == "application/json"
           params = JSON.generate(params)
         else
           headers["Content-Type"] = "application/x-www-form-urlencoded"
