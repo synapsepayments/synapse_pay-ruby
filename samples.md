@@ -261,8 +261,8 @@ client = SynapsePay::User.login("username", "password")
 order = client.orders.create({
   :amount => "100",
   :facilitator_fee => "1",
-  :seller_id => "3425",
-  :bank_id => "2174"
+  :seller_id => 3425,
+  :bank_id => 2174
 })
 ```
 
