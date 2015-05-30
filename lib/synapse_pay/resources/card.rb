@@ -14,7 +14,7 @@ module SynapsePay
       }, params)
       method = APIMethod.new(:post, "/card/edit", params, headers, self)
       json = @client.execute(method)
-      self.refresh_from(json[:card], method)
+      self.refresh_from(json[:card], method, @client)
     end
 
     # Everything below here is used behind the scenes.

@@ -46,13 +46,13 @@ module SynapsePay
     def refresh(params={}, headers={})
       method = APIMethod.new(:post, "/user/show", params, headers, self)
       json = @client.execute(method)
-      self.refresh_from(json[:user], method)
+      self.refresh_from(json[:user], method, @client)
     end
 
     def update(params={}, headers={})
       method = APIMethod.new(:post, "/user/edit", params, headers, self)
       json = @client.execute(method)
-      self.refresh_from(json[:user], method)
+      self.refresh_from(json[:user], method, @client)
     end
 
     # Everything below here is used behind the scenes.

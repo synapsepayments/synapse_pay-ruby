@@ -1,6 +1,5 @@
 # SynapsePay Ruby Bindings [![Code Climate](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby/badges/gpa.svg)](https://codeclimate.com/github/synapsepayments/synapse_pay-ruby)
 
-[![API Library via Apibits.com](http://apibits.com/assets/images/apibits-badge.png)](http://apibits.com)
 
 ## Installation
 
@@ -15,7 +14,7 @@ If you want to build & install the gem from source:
 
 ```bash
 gem build synapse_pay.gemspec
-gem install synapse_pay-0.0.4.gem
+gem install synapse_pay-0.0.5.gem
 ```
 
 ## Documentation

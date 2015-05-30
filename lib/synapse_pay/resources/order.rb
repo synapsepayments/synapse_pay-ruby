@@ -25,7 +25,7 @@ module SynapsePay
       }, params)
       method = APIMethod.new(:post, "/order/update", params, headers, self)
       json = @client.execute(method)
-      self.refresh_from(json[:order], method)
+      self.refresh_from(json[:order], method, @client)
     end
 
     def void(params={}, headers={})
@@ -34,7 +34,7 @@ module SynapsePay
       }, params)
       method = APIMethod.new(:post, "/order/void", params, headers, self)
       json = @client.execute(method)
-      self.refresh_from(json[:order], method)
+      self.refresh_from(json[:order], method, @client)
     end
 
     # Everything below here is used behind the scenes.
