@@ -2,6 +2,7 @@ module SynapsePay
   class Client < APIClient
     attr_reader :oauth_consumer_key,
                 :refresh_token,
+                :expires_at,
                 :expires_in,
                 :username,
                 :user_id,
