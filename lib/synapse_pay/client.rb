@@ -21,6 +21,7 @@ module SynapsePay
 
       @oauth_consumer_key = @json[:oauth_consumer_key]
       @refresh_token = @json[:refresh_token]
+      @expires_at = @json[:expires_at]
       @expires_in = @json[:expires_in]
       @username = @json[:username]
       @user_id = @json[:user_id]
