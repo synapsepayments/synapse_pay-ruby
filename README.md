@@ -15,7 +15,7 @@ If you want to build & install the gem from source:
 
 ```bash
 gem build synapse_pay.gemspec
-gem install synapse_pay-0.0.6.gem
+gem install synapse_pay-0.0.8.gem
 ```
 
 ## Documentation
