@@ -91,10 +91,6 @@ module SynapsePay
       @ssn ||= SsnEndpoint.new(self)
     end
 
-    def ssn_questions
-      @ssn_questions ||= SsnQuestionsEndpoint.new(self)
-    end
-
     def wires
       @wires ||= WireEndpoint.new(self)
     end

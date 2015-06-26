@@ -1,11 +1,12 @@
 module SynapsePay
   class SsnQuestions < APIResource
-    attr_accessor :question_set
+    attr_accessor :questions
+    attr_accessor :id
 
-    def answer(id, questions, params={}, headers={})
+    def answer(answers, params={}, headers={})
       params = ParamsBuilder.merge({
         :id => id,
-        :questions => questions,
+        :questions => answers,
       }, params)
       method = APIMethod.new(:post, "/user/ssn/answer", params, headers, self)
       json = @client.execute(method)
@@ -15,7 +16,8 @@ module SynapsePay
     # Everything below here is used behind the scenes.
     APIResource.register_api_subclass(self, "ssn_questions")
     @api_attributes = {
-      :question_set => {},
+      :questions => {},
+      :id => {},
     }
   end
 end
