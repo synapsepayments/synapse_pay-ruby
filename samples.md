@@ -87,6 +87,44 @@ client.refresh_access
 ```
 
 
+## Add SSN
+
+```ruby
+# Make sure we are in Sandbox
+SynapsePay.api_base = SynapsePay.api_sandbox
+
+SynapsePay.client_id = "client-id"
+SynapsePay.client_secret = "client-secret"
+client = SynapsePay::User.login("username", "password")
+
+ssn = client.ssn.add({
+  :birth_day => 23,
+  :birth_month => 8,
+  :birth_year => 1980,
+  :name_first => 'Jon',
+  :name_last => 'Doe',
+  :ssn => '3333',
+  :address_street1 => '1 Infinite Loop',
+  :address_postal_code => '94114',
+  :address_country_code => 'US'
+})
+
+if ssn.questions
+  # Partially successful with questions to answer
+  ssn.answer([
+    {question_id: 1, answer_id: 5},
+    {question_id: 2, answer_id: 3},
+    # ...
+  ])
+else
+  # validation successful, nothing more to do
+end
+
+# Answering without an SsnQuestions instance
+ssn = client.ssn.answer("id", "answers")
+```
+
+
 ## Update a user
 
 ```ruby
@@ -180,9 +218,9 @@ mfa # this will be a SynapsePay::BankMfaQuestions instance
 banks = mfa.answer("Bank of America", "test_answer") # this will be a list of bank accounts
 
 # Answering an MFA without an MFA instance
-banks = client.bank_mfa_devices.answer("access_token, "bank name", "answer")
+banks = client.bank_mfa_devices.answer("access_token", "bank name", "answer")
 # or
-banks = client.bank_mfa_questions.answer("access_token, "bank name", "answer")
+banks = client.bank_mfa_questions.answer("access_token", "bank name", "answer")
 ```
 
 
