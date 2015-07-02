@@ -2,7 +2,7 @@ module SynapsePay
   class SynapsePayError < StandardError
     attr_reader :message
 
-    def initialize(message=nil)
+    def initialize(message = nil)
       @message = message
     end
 

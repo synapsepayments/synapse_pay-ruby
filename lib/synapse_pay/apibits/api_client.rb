@@ -18,12 +18,10 @@ module SynapsePay
       api_method.execute
     end
 
-
     def inspect
       "#<#{self.class}:0x#{self.object_id.to_s(16)}> Headers: " +
         JSON.pretty_generate(@headers) + ", Params: " +
         JSON.pretty_generate(@params)
     end
-
   end
 end

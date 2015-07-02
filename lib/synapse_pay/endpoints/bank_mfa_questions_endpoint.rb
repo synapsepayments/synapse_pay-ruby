@@ -1,11 +1,11 @@
 module SynapsePay
   class BankMfaQuestionsEndpoint < APIEndpoint
-    
-    def answer(access_token, bank, mfa, params={}, headers={})
+
+    def answer(access_token, bank, mfa, params = {}, headers = {})
       params = ParamsBuilder.merge({
-        :access_token => access_token,
-        :bank => bank,
-        :mfa => mfa,
+        access_token: access_token,
+        bank: bank,
+        mfa: mfa
       }, params)
       method = APIMethod.new(:post, "/bank/mfa", params, headers, self)
       json = @client.execute(method)
@@ -17,6 +17,5 @@ module SynapsePay
         APIList.new(:Bank, json[:banks], method, @client)
       end
     end
-
   end
 end

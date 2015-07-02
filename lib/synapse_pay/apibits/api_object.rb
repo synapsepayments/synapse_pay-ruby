@@ -13,11 +13,11 @@ module SynapsePay
       end
     end
 
-    def initialize(json=nil)
+    def initialize(json = nil)
       refresh_from(json)
     end
 
-    def refresh_from(json={})
+    def refresh_from(json = {})
       @json = Util.sorta_deep_clone(json)
       @json.each do |k, v|
         @json[k] = APIObject.construct(v)
@@ -47,6 +47,5 @@ module SynapsePay
         end
       end
     end
-
   end
 end

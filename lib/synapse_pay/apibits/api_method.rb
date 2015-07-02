@@ -93,6 +93,5 @@ module SynapsePay
         return APIError.new(@response_body || "An error occured while making the API call.", self)
       end
     end
-
   end
 end
