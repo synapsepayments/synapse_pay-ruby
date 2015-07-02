@@ -2,7 +2,7 @@ module SynapsePay
   class APIError < SynapsePayError
     attr_reader :api_method
 
-    def initialize(message=nil, api_method=nil)
+    def initialize(message = nil, api_method = nil)
       @message = message
       @api_method = api_method
     end

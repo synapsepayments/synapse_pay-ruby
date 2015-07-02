@@ -5,14 +5,13 @@ module SynapsePay
       method = method.to_sym
       url, params = prepare_params(method, url, params, headers)
       request_opts = {
-        :method => method,
-        :url => url,
-        :headers => headers,
-        :payload => params,
-
-        :verify_ssl => false,
-        :open_timeout => 30,
-        :timeout => 60
+        method: method,
+        url: url,
+        headers: headers,
+        payload: params,
+        verify_ssl: false,
+        open_timeout: 30,
+        timeout: 60
       }
 
       execute_request(request_opts)
@@ -70,7 +69,7 @@ module SynapsePay
     #   { :a => { :b => "bvalue" } }  => ["a[b]=bvalue"]
     #   { :a => [1, 2] }           => ["a[]=1", "a[]=2"]
     #   { :a => "value" }          => ["a=value"]
-    def self.query_array(params, key_prefix=nil)
+    def self.query_array(params, key_prefix = nil)
       ret = []
       params.each do |key, value|
         if params.is_a?(Array)
@@ -99,6 +98,5 @@ module SynapsePay
     def self.escape(val)
       URI.escape(val.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
     end
-
   end
 end

@@ -33,6 +33,5 @@ module SynapsePay
       value ||= params[match] if params && params.has_key?(match)
       value
     end
-
   end
 end

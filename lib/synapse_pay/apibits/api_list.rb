@@ -6,7 +6,7 @@ module SynapsePay
     attr_reader :klass
     attr_reader :client
 
-    def initialize(klass, json={}, api_method=nil, client=nil)
+    def initialize(klass, json = {}, api_method = nil, client = nil)
       if klass.is_a?(Class)
         @klass = klass
       else
@@ -16,11 +16,9 @@ module SynapsePay
       refresh_from(json, api_method, client)
     end
 
-    def refresh_from(json, api_method=nil, client=nil)
+    def refresh_from(json, api_method = nil, client = nil)
       unless json.is_a?(Hash)
-        json = {
-          :data => json
-        }
+        json = { data: json }
       end
       json = Util.symbolize_keys(json)
 
@@ -80,9 +78,6 @@ module SynapsePay
       ret
     end
 
-
-    @api_attributes = {
-      :data => { :readonly => true }
-    }
+    @api_attributes = { data: { readonly: true } }
   end
 end

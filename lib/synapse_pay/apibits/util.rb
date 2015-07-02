@@ -33,7 +33,7 @@ module SynapsePay
       end
     end
 
-    def self.constantize(str, prefix=false)
+    def self.constantize(str, prefix = false)
       str = str.to_s
       begin
         str.split('::').reduce(SynapsePay, :const_get)

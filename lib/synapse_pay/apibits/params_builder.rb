@@ -15,16 +15,12 @@ module SynapsePay
       ret
     end
 
-    def self.build(params, api_key=nil, auth_key=nil)
+    def self.build(params, api_key = nil, auth_key = nil)
       default_params.merge(clean(params))
     end
 
     def self.default_params
-      params = {
-        :client_id => SynapsePay.client_id,
-        :client_secret => SynapsePay.client_secret,
-      }
+      params = { client_id: SynapsePay.client_id, client_secret: SynapsePay.client_secret }
     end
-
   end
 end

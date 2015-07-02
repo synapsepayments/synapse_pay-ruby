@@ -4,13 +4,13 @@ module SynapsePay
     attr_reader :json
     attr_reader :client
 
-    def initialize(json=nil, api_method=nil, client=nil)
+    def initialize(json = nil, api_method = nil, client = nil)
       refresh_from(json, api_method, client)
     end
 
-    def refresh_from(json={}, api_method=nil, client=nil)
+    def refresh_from(json={}, api_method = nil, client = nil)
       unless json.is_a?(Hash)
-        json = { :id => json }
+        json = { id: json }
       end
       json = Util.symbolize_keys(json)
 
@@ -112,7 +112,7 @@ module SynapsePay
       end
     end
 
-    def self.register_api_subclass(subclass, name=nil)
+    def self.register_api_subclass(subclass, name = nil)
       @api_subclasses ||= Set.new
       @api_subclasses << subclass
 
@@ -121,7 +121,6 @@ module SynapsePay
         @api_subclasses_hash[name] = subclass
       end
     end
-
     @api_attributes = {}
   end
 end

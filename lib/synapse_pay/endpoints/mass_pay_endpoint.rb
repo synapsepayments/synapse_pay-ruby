@@ -1,26 +1,23 @@
 module SynapsePay
   class MassPayEndpoint < APIEndpoint
-    
-    def all(params={}, headers={})
+
+    def all(params = {}, headers = {})
       method = APIMethod.new(:post, "/masspay/show", params, headers, self)
       json = @client.execute(method)
       APIList.new(:MassPay, json[:mass_pays], method, @client)
     end
 
-    def cancel(id, params={}, headers={})
-      params = ParamsBuilder.merge({
-        :id => id,
-      }, params)
+    def cancel(id, params = {}, headers = {})
+      params = ParamsBuilder.merge({ id: id }, params)
       method = APIMethod.new(:post, "/masspay/cancel", params, headers, self)
       json = @client.execute(method)
       APIList.new(:MassPay, json[:mass_pays], method, @client)
     end
 
-    def create(params={}, headers={})
+    def create(params = {}, headers = {})
       method = APIMethod.new(:post, "/masspay/add", params, headers, self)
       json = @client.execute(method)
       APIList.new(:MassPay, json[:mass_pays], method, @client)
     end
-
   end
 end
